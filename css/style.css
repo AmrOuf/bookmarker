@@ -1,0 +1,21 @@
+html
+{
+	padding-top: 35px;
+	
+}
+
+.header h3
+{
+	color: #ada8a8
+}
+
+.form-container
+{
+	background-color: #ededed;
+	padding: 50px
+}
+
+.form-container h2, .form-container form label
+{
+	color: #42464a
+}
