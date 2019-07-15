@@ -12,25 +12,35 @@
 
 	<body>
 
+		<!-- Header -->
 		<div class="container header">
 			<h3>Bookmarker</h3>
 			<hr>
 		</div>
 
+
+		<!-- Bookmark your sites -->
 		<div class="container form-container text-center">
 			<h2 class="mb-4">Bookmark Your Favourite Sites</h2>
 			<form>
 			  <div class="form-group">
 			    <label class="font-weight-bold">Website Name</label>
-			    <input type="text" class="form-control" placeholder="Website Name">
+			    <input type="text" class="form-control" placeholder="Website Name" id="site-name">
 			  </div>
 			  <div class="form-group">
 			    <label class="font-weight-bold">Website URL</label>
-			    <input type="url" class="form-control" placeholder="Website URL">
+			    <input type="url" class="form-control" placeholder="Website URL" id="site-url">
 			  </div>
-			<button type="submit" class="btn btn-primary btn-lg">Submit</button>  
+			<button type="button" class="btn btn-primary btn-lg" onclick="addSite()">Submit</button>  
 			</form>
 		</div>
+
+
+		<!-- Bookmarked sites -->
+		<div class="container bookmarked" id="bookmarked">
+		</div>
+
+
 
 
 
