@@ -1,4 +1,8 @@
 document.getElementById("myForm").addEventListener('submit', addSite);
+window.onload = function()
+{
+	addOldBookmarks();
+}
 
 
 function addSite(e)
@@ -56,7 +60,7 @@ function addSite(e)
 	}
 
 
-
+	var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
 	document.getElementById("bookmarked").innerHTML +=
 		'<div class="website mt-4">'+
 			'<span class="site-name mr-3">'+bookmarks[bookmarks.length-1].name+'</span>'+
@@ -70,24 +74,6 @@ function addSite(e)
 		'</div>';
 
 
-	/*
-	for (var i=0; i<bookmarks.length; i++) 
-	{
-		document.getElementById("bookmarked").innerHTML +=
-			'<div class="website mt-4">'+
-				'<span class="site-name mr-3">'+bookmarks[i].name+'</span>'+
-
-				'<button type="button" class="btn btn-success ml-1 id="site-visit">'+
-					'<a href="'+bookmarks[i].url+'" target="_blank">Visit</a>'+
-				'</button>'+
-
-				'<button type="button" class="btn btn-danger ml-1 id="site-delete" '+
-				'onclick="deleteSite(this)">Delete</button>'+
-			'</div>';
-	}
-	*/
-
-
 
 	siteName.value="";
 	siteUrl.value="";
@@ -95,5 +81,35 @@ function addSite(e)
 
 function deleteSite(e)
 {
+	//First, remove from DOM
 	e.parentNode.parentNode.removeChild(e.parentNode);
+
+
+	//var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+
+}
+
+function addOldBookmarks()
+{
+	if(localStorage.getItem("bookmarks") !== null)
+	{
+		var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+
+		for (var i=0; i<bookmarks.length; i++) 
+		{
+			document.getElementById("bookmarked").innerHTML +=
+				'<div class="website mt-4">'+
+					'<span class="site-name mr-3">'+bookmarks[i].name+'</span>'+
+
+					'<button type="button" class="btn btn-success ml-1 id="site-visit">'+
+						'<a href="'+bookmarks[i].url+'" target="_blank">Visit</a>'+
+					'</button>'+
+
+					'<button type="button" class="btn btn-danger ml-1 id="site-delete" '+
+					'onclick="deleteSite(this)">Delete</button>'+
+				'</div>';
+		}
+	}
+
+
 }
