@@ -7,7 +7,12 @@ function addSite(e)
 	var siteName = document.getElementById("site-name");
 	var siteUrl = document.getElementById("site-url");
 
-	console.log(siteUrl.value);
+	var bookmark = 
+	{
+		name: siteName.value,
+		url: siteUrl.value
+	};
+
 
 	if(siteName.value.length == 0)
 	{
@@ -19,6 +24,25 @@ function addSite(e)
 	{
 		alert("Please write a valid URL");
 		return;
+	}
+
+	bookmark = JSON.stringify(bookmark);
+
+
+	//Array of JSON objects
+	var bookmarks = [];
+
+	if(localStorage.getItem("bookmarks") === null)
+	{
+		bookmarks.push(bookmark);
+		localStorage.setItem("bookmarks", bookmarks);
+	}
+	else
+	{
+		bookmarks.push(localStorage.getItem("bookmarks"));
+		bookmarks.push(bookmark);
+		console.log(bookmarks);
+		localStorage.setItem("bookmarks", bookmarks);
 	}
 
 	document.getElementById("bookmarked").innerHTML += 
