@@ -6,5 +6,6 @@ The application layout is made in HTML and Bootstrap. You can find the applicati
 
 **(Still a work in progress)**
 
-### To-do list
-- Keep the bookmarked websites on the screen even after closing the current browser tab
+### Further improvements
+- Prevent duplicate URLs from being bookmarked
+- Ask for confirmation before deleting a bookmark
