@@ -1,50 +1,10 @@
-html
-{
-	padding-top: 35px;
-	height: 6000px
-}
-
-.header h3
-{
-	color: #ada8a8
-}
-
-.form-container
-{
-	background-color: #ededed;
-	padding: 50px
-}
-
-.form-container h2, .form-container form label
-{
-	color: #42464a
-}
-
-
-
-
-
-.bookmarked
-{
-	padding: 0
-}
-
-.bookmarked .website
-{
-	background-color: #f4f4f4;
-	padding: 20px 50px
-}
-
-.bookmarked .website .site-name
-{
-    font-size: 28px;
-    font-weight: 600;
-}
-
-.bookmarked .website .btn
-{
-	margin-top: -10px;
-}
-
+html{padding-top: 35px;padding-bottom: 50px;}
+.header h3{color: #ada8a8}
+.form-container{background-color: #ededed;padding: 50px}
+.form-container h2, .form-container form label{color: #42464a}
+.bookmarked{padding: 0}
+.bookmarked .website{background-color: #f4f4f4;padding: 20px 50px}
+.bookmarked .website .site-name{font-size: 28px;font-weight: 600;}
+.bookmarked .website .btn{margin-top: -10px;}
 a{color: #fff}
 a:hover{color: #fff;text-decoration: none}
