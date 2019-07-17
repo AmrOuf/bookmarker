@@ -79,14 +79,36 @@ function addSite(e)
 	siteUrl.value="";
 }
 
-function deleteSite(e)
+function deleteSite(btn)
 {
 	//First, remove from DOM
-	e.parentNode.parentNode.removeChild(e.parentNode);
+	btn.parentNode.parentNode.removeChild(btn.parentNode);
 
 
-	//var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+	//console.log(btn);
+	console.log(btn.previousSibling.firstChild.getAttribute("href"));
 
+	var urlToBeDeleted = btn.previousSibling.firstChild.getAttribute("href");
+
+	var bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+	//console.log(bookmarks);
+
+	console.log("Next up is the array outputs");
+
+	var newbookmarks = [];
+	for (var i=0; i<bookmarks.length; i++) 
+	{
+		console.log(bookmarks[i].url);
+		if(urlToBeDeleted !== bookmarks[i].url)
+		{
+			newbookmarks.push(bookmarks[i]);
+		}
+
+
+	}
+
+	console.log(newbookmarks);
+	localStorage.setItem("bookmarks", JSON.stringify(newbookmarks));
 }
 
 function addOldBookmarks()
