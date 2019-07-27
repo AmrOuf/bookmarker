@@ -4,7 +4,7 @@ This is a simple bookmarker application made in Javascript. It takes a website n
 
 The websites you bookmarked are saved in the local storage of the browser so the bookmarks are saved even if you close the browser tab or reload it again.
 
-The application layout is made in HTML, CSS, and Bootstrap. You can try the application here: http://bit.ly/2JDdCzp
+The application layout is made in HTML, CSS, and Bootstrap. You can try the application here: http://bit.ly/2YohXL0
 
 ### Further improvements
 - Prevent duplicate URLs from being bookmarked
